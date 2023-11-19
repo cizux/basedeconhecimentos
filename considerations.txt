@@ -1,2 +1,2 @@
 
-Knowledge Base API system for software and other products and services 
+Knowledge Base API system for software, services and other products.
