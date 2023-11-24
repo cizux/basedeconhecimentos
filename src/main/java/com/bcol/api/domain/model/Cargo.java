@@ -20,7 +20,6 @@ public class Cargo {
 	private Long id;
 	private String nome;
 	@OneToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_pessoa", nullable = false)
 	private Pessoa pessoa;
 }
-

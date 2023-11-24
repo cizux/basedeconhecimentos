@@ -21,9 +21,15 @@ public class Ferramenta {
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_pessoa", nullable = false)
+	private Pessoa pessoa;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_software",  nullable = false)
 	private Software software;
+	
 	//Exemoplo - KBCode -> KB123456
 	private String codigoBaseConhecimento;
 	private String titulo;
@@ -34,8 +40,10 @@ public class Ferramenta {
 	private String causa;
 	private String procedimento;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_versao",nullable = false)
 	private Versionamento versao;
+	
+
 	
 	
 

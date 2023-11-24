@@ -18,9 +18,13 @@ public class Comentario {
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	//private Ferramenta ferramenta;
+	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_ferramenta", nullable = false)
+	private Ferramenta ferramenta;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_pessoa", nullable = false)
 	private Pessoa pessoa;
 	private String mensagem;
 

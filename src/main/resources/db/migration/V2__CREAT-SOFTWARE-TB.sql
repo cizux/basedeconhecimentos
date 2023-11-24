@@ -1,0 +1,7 @@
+CREATE TABLE software (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	id_pessoa BIGINT NOT NULL,
+    nome VARCHAR(200) NOT NULL,
+    imagem VARCHAR(255),
+    FOREIGN KEY (id_pessoa) REFERENCES pessoa(id)
+);

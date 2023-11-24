@@ -21,10 +21,10 @@ public class Versionamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Long versao;
-	private LocalDateTime data;
+	private LocalDateTime createAt;
 	private String descricao;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name ="id_pessoa", nullable = false)
 	private Pessoa pessoa;
 
 }

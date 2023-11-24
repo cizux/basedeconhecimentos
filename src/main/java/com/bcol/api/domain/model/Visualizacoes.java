@@ -23,12 +23,14 @@ public class Visualizacoes {
 	private Long id;
 	private String ip;
 	private LocalDateTime dataVisualizacao;
-	private Long quantidadeVisualizacao;
+	
+	// quantidade capiturada de visualização no mesmo dia pelo mesmo IP
+	private Long quantidadeVisualizacaoDia;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_pessoa", nullable = false)
 	private Pessoa pessoa;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_ferramenta", nullable = false)
 	private Ferramenta ferramenta;
 
 }

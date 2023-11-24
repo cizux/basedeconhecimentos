@@ -25,7 +25,7 @@ public class Pessoa {
 	private String nome; 
 	private String email;
 	private String senha;
-	private String image;
+	private String imagem;
 	//private UserRole role;
 	private LocalDateTime createAt;
 	private LocalDateTime updateAt;

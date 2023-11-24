@@ -18,13 +18,13 @@ public class FoiUtil {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
-	// exemplo sim - não
+	// exemplo S = sim | N = não
 	private String resposta;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_ferramenta", nullable = false)
 	private Ferramenta ferramenta;
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(name = "id_pessoa", nullable = false)
 	private Pessoa pessoa;
 	
 
