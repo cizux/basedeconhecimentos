@@ -11,15 +11,17 @@ import com.bcol.api.domain.model.Pessoa;
 import com.bcol.api.domain.repository.PessoaRepository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Component
 public class PessoaRepositoryImpl implements PessoaRepository{
 	
+	@PersistenceContext
 	private EntityManager manager;
 
 	@Override
-	public List<Pessoa> todos() {
-		return manager.createQuery("FROM Pessoa", Pessoa.class).getResultList();
+	public List<Pessoa> todos(){
+		return manager.createQuery("SELECT p FROM Pessoa p", Pessoa.class).getResultList();
 	}
 
 	@Override
