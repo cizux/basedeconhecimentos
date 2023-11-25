@@ -6,7 +6,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.bcol.api.domain.model.Pessoa;
 import com.bcol.api.domain.repository.PessoaRepository;
 
@@ -46,5 +45,5 @@ public class PessoaRepositoryImpl implements PessoaRepository{
 		
 		manager.remove(pessoa);
 	}
-
+	
 }
