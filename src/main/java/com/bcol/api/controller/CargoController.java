@@ -17,65 +17,65 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bcol.api.domain.model.Software;
-import com.bcol.api.infrastructure.repository.SoftwareRepositoryImpl;
+import com.bcol.api.domain.model.Cargo;
+import com.bcol.api.infrastructure.repository.CargoRepositoryImpl;
 
 @RestController
-@RequestMapping("/softwares")
-public class SoftwareController {
+@RequestMapping("/cargos")
+public class CargoController {
 	
 	@Autowired
-	private SoftwareRepositoryImpl softwareRepositoryImpl;
+	private CargoRepositoryImpl cargoRepositoryImpl;
 	
 	
 	@GetMapping
-	public List<Software> listar(){
-		return softwareRepositoryImpl.todos();
+	public List<Cargo> listar(){
+		return cargoRepositoryImpl.todos();
 	}
 
-	@GetMapping("/{softwareid}")
-	public ResponseEntity<Software> buscar(@PathVariable Long softwareid) {
-		Software software = softwareRepositoryImpl.buscar(softwareid);
+	@GetMapping("/{cargoid}")
+	public ResponseEntity<Cargo> buscar(@PathVariable Long cargoid) {
+		Cargo cargo = cargoRepositoryImpl.buscar(cargoid);
 		
-		if (software != null) {
-			return ResponseEntity.ok(software);
+		if (cargo != null) {
+			return ResponseEntity.ok(cargo);
 		}
 		return ResponseEntity.notFound().build();	
 	}
 	
 	@PostMapping
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public Software adicionar(@RequestBody Software software) {
-		return softwareRepositoryImpl.salvar(software);
+	public Cargo adicionar(@RequestBody Cargo cargo) {
+		return cargoRepositoryImpl.salvar(cargo);
 	}
 	
 	
-	@PutMapping("/{softwareId}")
-	public ResponseEntity<Software> atualizar(@PathVariable Long softwareId, @RequestBody Software software){
+	@PutMapping("/{cargoId}")
+	public ResponseEntity<Cargo> atualizar(@PathVariable Long cargoId, @RequestBody Cargo cargo){
 		
-		Software softwareAtual = softwareRepositoryImpl.buscar(softwareId);
+		Cargo cargoAtual = cargoRepositoryImpl.buscar(cargoId);
 		
-		if(softwareAtual != null) {	
-		BeanUtils.copyProperties(software, softwareAtual, "id");
+		if(cargoAtual != null) {	
+		BeanUtils.copyProperties(cargo, cargoAtual, "id");
 		
-		softwareRepositoryImpl.salvar(softwareAtual);
+		cargoRepositoryImpl.salvar(cargoAtual);
 		
-		return ResponseEntity.ok(softwareAtual);
+		return ResponseEntity.ok(cargoAtual);
 		}
 		
 		return ResponseEntity.notFound().build();	
 	}
 	
 	
-	@DeleteMapping("/{softwareId}")
-	public ResponseEntity<Software> remover(@PathVariable Long softwareId){
+	@DeleteMapping("/{cargoId}")
+	public ResponseEntity<Cargo> remover(@PathVariable Long cargoId){
 		
 		try {
-			Software software = softwareRepositoryImpl.buscar(softwareId);
+			Cargo cargo = cargoRepositoryImpl.buscar(cargoId);
 		
-			if(software != null) {
+			if(cargo != null) {
 			
-				softwareRepositoryImpl.remover(softwareId);
+				cargoRepositoryImpl.remover(cargoId);
 			
 		
 				return ResponseEntity.noContent().build();

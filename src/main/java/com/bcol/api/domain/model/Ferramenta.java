@@ -39,12 +39,5 @@ public class Ferramenta {
 	private String pretencao;
 	private String causa;
 	private String procedimento;
-	@ManyToOne
-	@JoinColumn(name = "id_versao",nullable = false)
-	private Versionamento versao;
 	
-
-	
-	
-
 }

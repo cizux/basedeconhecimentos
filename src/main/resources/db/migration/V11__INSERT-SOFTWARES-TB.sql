@@ -1,0 +1,22 @@
+INSERT INTO software (id_pessoa, nome, imagem)
+VALUES
+  (1, 'Photo Shop', 'null'),
+  (1, 'Teams', 'null'),
+  (3, 'Outlook', 'null'),
+  (2, 'Intelij', 'null'),
+  (1, 'Linkdin', 'null'),
+  (1, 'PHP', 'null'),
+  (1, 'JAVA', 'null'),
+  (2, 'HTML', 'null'),
+  (1, 'HTML5', 'null'),
+  (2, 'Javascript', 'null'),
+  (2, 'Angular', 'null'),
+  (2, 'Thhunderbird', 'null'),
+  (2, 'Moodle', 'null'),
+  (3, 'IPhone', 'null'),
+  (3, 'Spring Tool Suite', 'null'),
+  (3, 'Bolos', 'null'),
+  (3, 'Pizzas', 'null'),
+  (3, 'Microsoft Edge', 'null'),
+  (3, 'Mozilla Firefox', 'null'),
+  (2, 'Google Chrome', 'null'); 

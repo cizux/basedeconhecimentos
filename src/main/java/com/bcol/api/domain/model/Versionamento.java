@@ -23,8 +23,19 @@ public class Versionamento {
 	private Long versao;
 	private LocalDateTime createAt;
 	private String descricao;
+	
+	
+	
+	
+	
+	@ManyToOne
+	@JoinColumn(name ="id_ferramenta", nullable = false)
+	private Ferramenta ferramenta;
+	
 	@ManyToOne
 	@JoinColumn(name ="id_pessoa", nullable = false)
 	private Pessoa pessoa;
+	
+
 
 }

@@ -26,6 +26,7 @@ public class Comentario {
 	@ManyToOne
 	@JoinColumn(name = "id_pessoa", nullable = false)
 	private Pessoa pessoa;
+	
 	private String mensagem;
 
 }
